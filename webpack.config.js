@@ -7,7 +7,10 @@ module.exports = function () {
     return {
         module: {
             rules: [
-                { test: /\.css$/, use: 'css-loader' },
+                {
+                    test: /\.css$/,
+                    loader: ["style-loader", "css-loader"]
+                },
                 {
                     test: /\.ts$/,
                     loaders: [
@@ -26,15 +29,24 @@ module.exports = function () {
                         }
 
                     ]
+                },
+                {test: /\.json$/, loader: 'json-loader'},
+                {
+                    test: /\.html$/,
+                    loader: "html-loader"
+                },
+                {
+                    test: /\.scss$/,
+                    loader: ["raw-loader", "sass-loader?sourceMap"]
                 }
             ]
         },
         resolve: {
-            extensions: ['.ts', '.js']
+            extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
         },
         entry: {
-            app: './src/main.ts',
-            styles: './src/assets/styles/main.css'
+            polly: './src/polyfills.ts',
+            main: './src/main.ts'
         },
         output: {
             path: __dirname + '/dist',
@@ -48,7 +60,7 @@ module.exports = function () {
             new HtmlWebpackPlugin({
                 template: __dirname + '/src/index.html',
                 output: __dirname + '/dist',
-                inject: 'head'
+                inject: 'body'
             }),
             new ScriptExtPlugin({
                 defaultAttribute: 'defer'
