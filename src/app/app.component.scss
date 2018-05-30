@@ -41,20 +41,32 @@ h1 {
   margin-bottom: 15px;
   padding: 10px;
 
+  .heroe-circle{
+    background-color: #f21620;
+    width: 50px;
+    height: 50px;
+    opacity: 0.75;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    right: 40px;
+    bottom: 4px;
+    box-shadow: 1px 2px #888888;
+    
+
+    .text{
+      color: white;
+      font-weight: bolder;
+      position: relative;
+      left: 12px;
+      top: 15px;
+    }
+  }
+
   .heroe-image{
     width: fit-content;
     display: inline;
     float: left;
-
-    .heroe-circle{
-      background-color: #f21620;
-      width: 50px;
-      height: 50px;
-      opacity: 0.5;
-      border-radius: 50%;
-      position: absolute;
-      display: block;
-    }
 
     img{
       border-radius: 50%;
@@ -67,7 +79,6 @@ h1 {
     padding: 10px;
     float: right;
     margin-top: 50px;
-    margin-left: 15px;
   }
 
   p{

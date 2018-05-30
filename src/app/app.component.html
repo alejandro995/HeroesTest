@@ -2,9 +2,13 @@
 
     <div class="container">
 
-        <div class="heroe-card" *ngFor="let hero of heroes">
+        <div class="heroe-card" *ngFor="let hero of heroes; let i = index">
+                <span class="heroe-circle">
+                    <span class="text">
+                            {{i+1 | ordinal}}
+                    </span>
+                </span>
             <div class="heroe-image">
-                    <span class="heroe-circle"></span>
                     <img src="{{hero._picture}}" alt="Smiley face"> 
             </div>
             <div class="heroe-description">
