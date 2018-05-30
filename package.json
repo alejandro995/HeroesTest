@@ -21,10 +21,13 @@
     "rxjs": "^6.2.0",
     "typescript": "^2.7.2",
     "webpack": "^4.10.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",
+    "@angular/flex-layout": "^5.0.0-beta.14",
     "@angular/forms": "^6.0.3",
     "@ngtools/webpack": "^6.0.5",
     "css-loader": "^0.28.11",
@@ -39,7 +42,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "webpack-dev-server --inline --progress --port 4200",
     "build": "webpack"
   },
   "repository": {
