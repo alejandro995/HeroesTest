@@ -1,7 +1,7 @@
 $color: #0086b3;
 $bg-color: #f67031;
 $heroe-name: #f21620;
-$text: #979797;
+$text: #8a8a8a;
 
 h1 {
   font-size: 1.2em;
@@ -21,7 +21,7 @@ h1 {
 }
 
 .container {
-  background-color:rgba(255, 255, 255 , .3);
+  background-color:rgba(255, 255, 255 , .4);
   margin: auto;
     width: 95%;
     display: -webkit-box;
@@ -31,7 +31,57 @@ h1 {
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
+    padding-top: 1.2%; 
+    padding-bottom: 1.2%;
 }
+
+.heroe-card{
+  background-color:rgb(255, 255, 255);
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  .heroe-image{
+    width: fit-content;
+    display: inline;
+    float: left;
+
+    .heroe-circle{
+      background-color: #f21620;
+      width: 50px;
+      height: 50px;
+      opacity: 0.5;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+    }
+
+    img{
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+    }
+  }
+  .heroe-description{
+    width: fit-content;
+    padding: 10px;
+    float: right;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+
+  p{
+    margin: 0px;
+    color: $text;
+  }
+  p:nth-child(1){
+    font-size: 25px;
+    color: red;
+    font-weight: bolder; 
+  }
+}
+
+
 
 .body {
   background-image: url('../../../assets/img/marvel-background.jpg') !important; 

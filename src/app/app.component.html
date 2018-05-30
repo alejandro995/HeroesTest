@@ -2,16 +2,16 @@
 
     <div class="container">
 
-        <div class="heroe-card">
-                <h1>{{message}}</h1>
-
-                <input type="text" [(ngModel)]="message"/>
+        <div class="heroe-card" *ngFor="let hero of heroes">
+            <div class="heroe-image">
+                    <span class="heroe-circle"></span>
+                    <img src="{{hero._picture}}" alt="Smiley face"> 
+            </div>
+            <div class="heroe-description">
+                <p>{{hero._nickname}}</p>
+                <p>{{hero._name}}</p>
+                <p>Estatura: {{hero._height}}mt</p>
+            </div>
         </div>
-        <div class="heroe-card">
-                <h1>{{message}}</h1>
-
-                <input type="text" [(ngModel)]="message"/>
-        </div>
-        
     </div>
 </div>
