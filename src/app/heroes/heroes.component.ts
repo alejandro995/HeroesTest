@@ -1,20 +1,17 @@
 import {Component, OnInit, Inject} from "@angular/core";
-import { HeroesServices } from "./services/heroes.service";
+import { HeroesServices } from "../services/heroes.service";
 import { Store } from '@ngrx/store';
 import "core-js/es7/reflect";
 import { Observable } from "rxjs/Observable";
-import { heroes_reducer } from "./store/reducers/heroesReducers";
-import * as HeroesActions  from "./store/actions/heroesAction";
-
-
+import { heroes_reducer } from "../store/reducers/heroesReducers";
+import * as HeroesActions  from "../store/actions/heroesAction";
 
 @Component({
-    selector: "hellow-app",
-    styleUrls: ['./app.component.scss'],
-    templateUrl: './app.component.html',
-    providers: [ HeroesServices ]
+    selector: "heroes",
+    styleUrls: ['./heroes.component.scss'],
+    templateUrl: './heroes.component.html'
 })
-export class HelloComponent implements OnInit{
+export class HeroesComponent implements OnInit{
     heroes: any;
 
 

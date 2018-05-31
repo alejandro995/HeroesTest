@@ -1,6 +1,10 @@
 {
- "compilerOptions": {
-   "experimentalDecorators": true,
-   "lib": [ "dom", "esnext" ]
- }
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "emitDecoratorMetadata": true /* Important for injectables in services to recognize the parameter when is use by a component*/
+    }
 }
