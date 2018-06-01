@@ -27,9 +27,7 @@ export class HeroesComponent implements OnInit{
          
     }
     getHeroes(){
-        console.log('se llego a cambiar se por un verbo por que los commits no se hacen asi');
-        
-        this.store.dispatch({
+            this.store.dispatch({
             type: HeroesActions.REQUEST_HEROES
         });
     }
