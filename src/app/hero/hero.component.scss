@@ -1,100 +1,16 @@
-$color: #0086b3;
-$bg-color: #f67031;
-$heroe-name: #f21620;
-$text: #8a8a8a;
+@import '../heroes/heroes.component.scss';
 
-h1 {
-  font-size: 1.2em;
-  color: $color;
-  background-image: url('../../../assets/img/marvel-background.jpg'); 
+.returnToHero{
+  width: 150px;
+height: 40px;
+background-color: white;
+display: block;
+margin: 15px auto;
+content: "Return to heroes";
+font-style: unset;
+text-align: center;
+padding-top: 18px;
+text-decoration: none;
+color: red;
+border-radius: 14px;
 }
-.background { 
-  background-image: url('../../../assets/img/marvel-background.jpg'); 
-  height: 100%;
-  width: 100%;
-  display: block;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background-color: $bg-color;
-  padding: 5% 0%;
-}
-
-.container {
-  background-color:rgba(255, 255, 255 , .4);
-  margin: auto;
-    width: 95%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-    padding-top: 1.2%; 
-    padding-bottom: 1.2%;
-}
-
-.heroe-card{
-  background-color:rgb(255, 255, 255);
-  border-radius: 15px;
-  margin-bottom: 15px;
-  padding: 10px;
-
-  .heroe-circle{
-    background-color: #f21620;
-    width: 50px;
-    height: 50px;
-    opacity: 0.75;
-    border-radius: 50%;
-    position: relative;
-    display: inline-block;
-    right: 40px;
-    bottom: 4px;
-    box-shadow: 1px 2px #888888;
-    
-
-    .text{
-      color: white;
-      font-weight: bolder;
-      position: relative;
-      left: 12px;
-      top: 15px;
-    }
-  }
-
-  .heroe-image{
-    width: fit-content;
-    display: inline;
-    float: left;
-
-    img{
-      border-radius: 50%;
-      width: 140px;
-      height: 140px;
-    }
-  }
-  .heroe-description{
-    width: fit-content;
-    padding: 10px;
-    float: right;
-    margin-top: 50px;
-  }
-
-  p{
-    margin: 0px;
-    color: $text;
-  }
-  p:nth-child(1){
-    font-size: 25px;
-    color: red;
-    font-weight: bolder; 
-  }
-}
-
-
-
-.body {
-  background-image: url('../../../assets/img/marvel-background.jpg') !important; 
-}
-

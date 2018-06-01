@@ -1,21 +1,28 @@
 <div class="background">
 
-    <div class="container">
+        <div class="container">
+            <div class="heroe-card">
+                <div class="heroe-image">
+                                <img src="{{hero._picture}}"> 
+                </div>
+                <div class="heroe-description">
+                    <p>{{hero._nickname}}</p>
+                    <p>Nombre: <input
+                        type="text"
+                        id="item-input"
+                        [(ngModel)]="hero._name"
+                        name="item"></p>
+                    <p>Estatura:<input
+                        type="number"
+                        id="item-input"
+                        [(ngModel)]="hero._height"
+                        name="item"></p>
+                        <button (click)="updateHero(hero)">Save Hero!</button>
+                </div>
+            </div>
 
-        <div class="heroe-card" *ngFor="let hero of heroes; let i = index">
-                <span class="heroe-circle">
-                    <span class="text">
-                            {{i+1 | ordinal}}
-                    </span>
-                </span>
-            <div class="heroe-image">
-                    <img src="{{hero._picture}}" alt="Smiley face"> 
-            </div>
-            <div class="heroe-description">
-                <p>{{hero._nickname}}</p>
-                <p>{{hero._name}}</p>
-                <p>Estatura: {{hero._height}}mt</p>
-            </div>
+            
         </div>
+        <a class='returnToHero' [routerLink]="['/']">return to heroes</a>
     </div>
-</div>
+    

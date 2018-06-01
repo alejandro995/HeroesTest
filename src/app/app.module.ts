@@ -14,12 +14,13 @@ import { HeroComponent } from './hero/hero.component';
 import { heroes_reducer } from './store/reducers/heroesReducers';
 import { EffectsModule } from '@ngrx/effects';
 import { HeroesEffects } from './store/effects/heroesEffects';
+import { routing } from './routes/app.routing';
 
 
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, StoreModule.forRoot({ heroes: heroes_reducer }),
-        EffectsModule.forRoot([HeroesEffects]),],
+        EffectsModule.forRoot([HeroesEffects]), routing],
     declarations: [HelloComponent, OrdinalPipe, HeroesComponent, HeroComponent],
     bootstrap: [HelloComponent],
     providers: [HeroesServices]

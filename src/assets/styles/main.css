@@ -1,3 +1,6 @@
 
 .content { flex: 1 0 auto;}
+body {
+    background: url('./../img/marvel-background.jpg');
+}
 footer { padding: 10px 0; text-align: center; }

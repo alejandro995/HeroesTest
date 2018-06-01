@@ -1,6 +1,6 @@
 export interface Hero {
     _name: string;
-    _height: string;
+    _height: number;
     _picture: string;
     _nickname: string;   
 }

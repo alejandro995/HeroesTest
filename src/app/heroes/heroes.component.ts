@@ -5,6 +5,7 @@ import "core-js/es7/reflect";
 import { Observable } from "rxjs/Observable";
 import { heroes_reducer } from "../store/reducers/heroesReducers";
 import * as HeroesActions  from "../store/actions/heroesAction";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "heroes",
@@ -15,17 +16,19 @@ export class HeroesComponent implements OnInit{
     heroes: any;
 
 
-    constructor(private store: Store<any>){
+    constructor(private store: Store<any>, private router: Router){
+        this.store.select('heroes').subscribe(data => {                 
+            //this.getHeroes();
+            this.heroes = data.heroes;
+         });
     }
 
     ngOnInit() {
-        this.getHeroes();
-         this.store.select('heroes').subscribe(data => {
-            this.heroes = data.heroes;
-            console.log(data);
-         });
+         
     }
     getHeroes(){
+        console.log('se llego a cambiar se por un verbo por que los commits no se hacen asi');
+        
         this.store.dispatch({
             type: HeroesActions.REQUEST_HEROES
         });

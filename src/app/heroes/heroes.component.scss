@@ -8,21 +8,12 @@ h1 {
   color: $color;
   background-image: url('../../../assets/img/marvel-background.jpg'); 
 }
-.background { 
-  background-image: url('../../../assets/img/marvel-background.jpg'); 
-  height: 100%;
-  width: 100%;
-  display: block;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background-color: $bg-color;
-  padding: 5% 0%;
-}
+
 
 .container {
   background-color:rgba(255, 255, 255 , .4);
   margin: auto;
+  min-width: 333px;
     width: 95%;
     display: -webkit-box;
     display: -moz-box;
@@ -31,15 +22,19 @@ h1 {
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
-    padding-top: 1.2%; 
-    padding-bottom: 1.2%;
+    padding: 1.2% 20px;
+    margin-top: 6%;
+    border-radius: 10px;
 }
 
 .heroe-card{
+  position: relative;
   background-color:rgb(255, 255, 255);
   border-radius: 15px;
   margin-bottom: 15px;
   padding: 10px;
+  flex-basis: 300px;
+  margin: 6px 6px;
 
   .heroe-circle{
     background-color: #f21620;
@@ -47,10 +42,10 @@ h1 {
     height: 50px;
     opacity: 0.75;
     border-radius: 50%;
-    position: relative;
-    display: inline-block;
-    right: 40px;
-    bottom: 4px;
+    position: absolute;
+    display: block;
+    left: 110px;
+    top: 4px;
     box-shadow: 1px 2px #888888;
     
 
@@ -92,6 +87,11 @@ h1 {
   }
 }
 
+@media (min-width: 1024px) {
+  .container {
+    width: 1000px;
+  }
+}
 
 
 .body {
