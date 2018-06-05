@@ -23,6 +23,5 @@ export class LoadHeroesAction implements Action {
 
   export class LoadHeroAction implements Action {
     readonly type = LOAD_HERO;
-    constructor (public payload: number) {}
+    constructor (public payload: any) {}
   }
-

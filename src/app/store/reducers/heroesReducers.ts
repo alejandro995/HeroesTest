@@ -19,6 +19,8 @@ export function heroes_reducer(state= initialState, action )  {
             return  {heroes: action.payload, message: 'Heroes loaded'};
         case HeroesActions.LOAD_HERO:
             let newState= state.heroes;
+            console.log("Reducer break");
+            console.log(action);
             newState.splice(action.payload.index, 1, action.payload.heroe);
             return {heroes: newState, message: 'Heroes updated'};
         default:

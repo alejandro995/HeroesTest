@@ -6,6 +6,7 @@ import { Observable } from "rxjs/Observable";
 import { heroes_reducer } from "../store/reducers/heroesReducers";
 import * as HeroesActions  from "../store/actions/heroesAction";
 import { Router } from "@angular/router";
+import { empty } from "rxjs/Observer";
 
 @Component({
     selector: "heroes",
@@ -17,9 +18,15 @@ export class HeroesComponent implements OnInit{
 
 
     constructor(private store: Store<any>, private router: Router){
+
+        
+
         this.store.select('heroes').subscribe(data => {                 
-            //this.getHeroes();
-            this.heroes = data.heroes;
+            if(data.heroes == null || data.heroes == empty){
+                this.getHeroes();
+            }else{
+                this.heroes = data.heroes;
+            }
          });
     }
 
@@ -27,8 +34,6 @@ export class HeroesComponent implements OnInit{
          
     }
     getHeroes(){
-            this.store.dispatch({
-            type: HeroesActions.REQUEST_HEROES
-        });
+            this.store.dispatch( new HeroesActions.RequestHeroesAction());
     }
 }

@@ -24,39 +24,22 @@ export class HeroComponent implements OnInit {
 
     }
     ngOnInit() {
-        this.getHeroes();
         this.store.select('heroes').subscribe(data => {
-            this.heroes = data.heroes;
+            data.heroes.forEach((element,i) => {
+                    if (element._nickname === this.heroNickname) {
+                        this.hero = element;
+                        this.heroIndex = i;
+                        return element;
+                    }
+                });
         });
-        this.heroes.forEach((element,i) => {
-            if (element._nickname === this.heroNickname) {
-                this.hero = element;
-                this.heroIndex = i;
-                return element;
-            }
-        });
-        console.log(
-            "hero ----->"
-            + this.hero
-        );
-       
     }
 
-    updateHero(hero: Hero){
-        console.log(hero);
-        this.store.dispatch({
-            type: HeroesActions.LOAD_HERO,
-            payload: {
-                heroe: hero,
+    updateHero(){
+        this.store.dispatch( new HeroesActions.LoadHeroAction({
+                heroe: this.hero,
                 index: this.heroIndex
-            }
-        });
-
-    }
-
-    getHeroes() {
-        this.store.dispatch({
-            type: HeroesActions.REQUEST_HEROES
-        });
+            })
+        )
     }
 }
