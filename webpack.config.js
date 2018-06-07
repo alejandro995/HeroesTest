@@ -14,8 +14,8 @@ module.exports = function () {
                 {
                     test: /\.ts$/,
                     loaders: [
-                        'angular2-template-loader',
-                        'ts-loader'
+                        'ts-loader',
+                        'angular2-template-loader'
                     ]
                 },
                 {

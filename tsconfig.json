@@ -1,5 +1,8 @@
 {
+    "exclude": [ "node_modules"],
     "compilerOptions": {
+        "module": "es2015",
+        "target": "es5",
         "baseUrl": ".",
         "paths": {
             "*": [
@@ -8,11 +11,27 @@
             ]
           },
         "experimentalDecorators": true,
+        "moduleResolution": "node",
         "lib": [
-            "dom",
-            "esnext"
+            "es2015",
+            "dom"
         ],
+        "typeRoots": [
+            "../node_modules/@types"
+          ],
+        "types":["node", "jasmine", "core-js"],
         "emitDecoratorMetadata": true /* Important for injectables in services to recognize the parameter when is use by a component*/,
-        "sourceMap": true
+        "sourceMap": true,
+        "listFiles": true,
+        "noEmitOnError": false,
+        "removeComments": true,
+        "noImplicitAny": false
+    }
+    ,
+    "awesomeTypeScriptLoaderOptions": {
+        "useWebpackText": true,
+        "useTranspileModule": true,
+        "doTypeCheck": true,
+        "forkChecker": true
     }
 }

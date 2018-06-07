@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { HelloComponent } from './app.component';
 
@@ -21,7 +22,7 @@ import { ServiceComponent } from './services/service.component';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, StoreModule.forRoot({ heroes: heroes_reducer }),
-        EffectsModule.forRoot([HeroesEffects]), routing],
+        EffectsModule.forRoot([HeroesEffects]), routing, HttpClientTestingModule],
     declarations: [HelloComponent, OrdinalPipe, HeroesComponent, HeroComponent, ServiceComponent],
     bootstrap: [HelloComponent],
     providers: [HeroesServices]
